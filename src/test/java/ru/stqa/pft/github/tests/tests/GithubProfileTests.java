@@ -16,18 +16,18 @@ public class GithubProfileTests extends TestBase {
 
 
   @Test
-  public void testRepoCreation() throws InterruptedException {
+  public void testRepoCreation() throws InterruptedException {//создание репозитория
     app.getAuthorizationHelper().repoPage();
     TimeUnit.MILLISECONDS.sleep(500);
     int before = app.getAuthorizationHelper().getRepoCount();
     app.getAuthorizationHelper().createRep("testRepo");
     app.getAuthorizationHelper().returnToRepoPage();
     int after = app.getAuthorizationHelper().getRepoCount();
-    Assert.assertEquals(after, before + 1);
+    Assert.assertEquals(after, before + 1);//проверка, что репозиторий создан
   }
 
   @Test
-  public void testRepoDeletion() throws InterruptedException {
+  public void testRepoDeletion() throws InterruptedException {//удаление репозитория
     app.getAuthorizationHelper().repoPage();
     TimeUnit.MILLISECONDS.sleep(500);
     int before = app.getAuthorizationHelper().getRepoCount();
@@ -35,7 +35,7 @@ public class GithubProfileTests extends TestBase {
     app.getAuthorizationHelper().goToProfile();
     app.getAuthorizationHelper().repoPage();
     int after = app.getAuthorizationHelper().getRepoCount();
-    Assert.assertEquals(after, before - 1);
+    Assert.assertEquals(after, before - 1);//репозиторий удален
 
 
   }

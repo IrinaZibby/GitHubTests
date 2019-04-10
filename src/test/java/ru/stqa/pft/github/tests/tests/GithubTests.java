@@ -9,14 +9,7 @@ import java.io.IOException;
 
 
 public class GithubTests {
-
-
-  @Test
-  public void testRepo() throws IOException {
-    Github github = new RtGithub("7fd767de8fa6723cd78fbeb6ab64c338b7fdfc3a");
-    Branches branches = github.repos().get(new Coordinates.Simple("IrinaZibby", "GitHubTests")).branches();
-    System.out.println(branches.repo());
-  }
+  
 
   @Test
   public void testCommits() throws IOException {
